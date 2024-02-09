@@ -1,5 +1,11 @@
-import React from "react";
+import "../styles/_Landingpage.scss";
 
 export const Landingpage = () => {
-  return <div>Landingpage</div>;
+  return (
+    <div className="landingpage-background">
+      <div className="landingpage-content-container">
+        <h1>Bella Napoli</h1>
+      </div>
+    </div>
+  );
 };
