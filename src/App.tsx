@@ -1,16 +1,19 @@
 import "./App.scss";
-import { getData } from "./api/getReq";
-import { Router } from "./components/Router";
+import { getRest } from "./api/getRest";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./Router";
 import { createBooking } from "./services/createBooking";
 import { getBooking } from "./services/getBooking";
+import { deleteBooking } from "./services/deleteBooking";
 function App() {
   // createBooking();
-  // getData();
+  // getRest();
   getBooking();
+  deleteBooking();
 
   return (
     <>
-      <Router></Router>
+      <RouterProvider router={router}></RouterProvider>;
     </>
   );
 }
