@@ -10,17 +10,17 @@ export const Landingpage = () => {
             <NavLink to={"booking"}>Boka bord</NavLink>
           </li>
           <li>
-            <NavLink to={"meny"}>Meny</NavLink>
+            <a href="#menu-container">Meny</a>
           </li>
           <li>
-            <NavLink to={"contact"}>Kontakt</NavLink>
+            <a href="#contact-container">Kontakt</a>
           </li>
         </ul>
       </header>
       <div className="welcome-container">
         <h1>Välkommen till Bella Napoli!</h1>
       </div>
-      <div className="menu-container">
+      <div id="menu-container">
         <div className="menutext-container">
           <h3>Menu</h3>
           <p>Risotto</p>
@@ -30,7 +30,7 @@ export const Landingpage = () => {
           <p>Pesto alla Genovese</p>
         </div>
       </div>
-      <div className="contact-container">
+      <div id="contact-container">
         <div className="contacttext-container">
           <p>Öppettider: Måndag-Söndag 18-24</p>
           <p>Adress: Drottinggatan 50</p>
