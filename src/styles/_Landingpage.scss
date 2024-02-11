@@ -32,22 +32,22 @@ header {
     width: 100%;
     position: absolute;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding-right: 50px;
     height: 100px;
 
     ul {
         list-style: none;
         display: flex;
         gap: 50px;
+        padding: 0;
 
         li {
             gap: 50px;
             a {
                 color: v.$primarytextcolor;
                 text-decoration: none;
-                font-size: 24px;
+                font-size: 1em;
                 background-color: rgb(0, 0, 0, 0.2);
                 border: solid v.$primarytextcolor 2px;
                 padding: 10px;
@@ -56,6 +56,10 @@ header {
                 }
             }
         }
+    }
+    @include mixins.desktop {
+        justify-content: flex-end;
+        padding-right: 50px;
     }
 }
 
