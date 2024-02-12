@@ -22,15 +22,16 @@ const router = createBrowserRouter([
         children: [
           {
             path: "book-number-of-guests",
-            element: <ChoseNumberOfPersons></ChoseNumberOfPersons>,
+            element: <ChoseNumberOfPersons />,
+            index: true,
           },
           {
             path: "book-on-date",
-            element: <ChoseDate></ChoseDate>,
+            element: <ChoseDate />,
           },
           {
             path: "book-on-time",
-            element: <ChoseTime></ChoseTime>,
+            element: <ChoseTime />,
           },
         ],
       },
