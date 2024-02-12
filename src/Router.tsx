@@ -3,6 +3,7 @@ import { Layout } from "./components/Layout";
 import { Landingpage } from "./pages/Landingpage";
 import { Bookingpage } from "./pages/Bookingpage";
 import { Checkoutpage } from "./pages/Checkoutpage";
+import { Admin } from "./pages/Admin";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkoutpage />,
+      },
+      {
+        path: "/admin",
+        element: <Admin />,
       },
     ],
   },
