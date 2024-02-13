@@ -1,13 +1,14 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Layout } from "./Layout";
-import { Landingpage } from "../pages/Landingpage";
-import { Bookingpage } from "../pages/Bookingpage";
-import { Checkoutpage } from "../pages/Checkoutpage";
-import { ChoseNumberOfPersons } from "./ChoseNumberOfPersons";
-import { ChoseDate } from "./ChoseDate";
-import { ChoseTime } from "./ChoseTime";
+import { createBrowserRouter } from "react-router-dom";
+import { Layout } from "../src/components/Layout";
+import { Landingpage } from "./pages/Landingpage";
+import { Bookingpage } from "./pages/Bookingpage";
+import { Checkoutpage } from "./pages/Checkoutpage";
+import { ChoseNumberOfPersons } from "../src/components/ChoseNumberOfPersons";
+import { ChoseDate } from "../src/components/ChoseDate";
+import { ChoseTime } from "../src/components/ChoseTime";
+import { Admin } from "./pages/Admin";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
@@ -39,10 +40,10 @@ const router = createBrowserRouter([
         path: "checkout",
         element: <Checkoutpage />,
       },
+      {
+        path: "admin",
+        element: <Admin />,
+      },
     ],
   },
 ]);
-
-export const Router = () => {
-  return <RouterProvider router={router} />;
-};
