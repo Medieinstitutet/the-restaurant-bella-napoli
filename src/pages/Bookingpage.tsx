@@ -5,6 +5,9 @@ export const Bookingpage = () => {
   return (
     <>
       <div className="bookingpage-container">
+        <NavLink to={"/"} className="backtohomepage-link">
+          Tillbaka till huvudsidan
+        </NavLink>
         <nav>
           <NavLink to={"book-number-of-guests"}>Antal gäster</NavLink>
           <NavLink to={"book-on-date"}>Datum</NavLink>

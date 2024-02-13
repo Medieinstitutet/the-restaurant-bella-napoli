@@ -8,7 +8,7 @@ export const ChoseNumberOfPersons = () => {
 
   return (
     <div className="chosenumberofpersons-container">
-      <h2>Hur många gäster?</h2>
+      <h2>Välj antal gäster</h2>
       <div className="buttons-container">{buttons}</div>
     </div>
   );
