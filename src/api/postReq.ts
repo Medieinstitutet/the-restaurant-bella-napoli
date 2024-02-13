@@ -1,5 +1,5 @@
 import axios from "../../node_modules/axios/index";
-export const postData = () => {
+export const postRest = () => {
   axios
     .post("https://school-restaurant-api.azurewebsites.net/restaurant/create", {
       name: "Bella Napoli",
