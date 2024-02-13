@@ -7,6 +7,6 @@ export const getBookings = async () => {
     "https://school-restaurant-api.azurewebsites.net/booking/restaurant/" +
       restId
   );
-
+  
   return response;
 };
