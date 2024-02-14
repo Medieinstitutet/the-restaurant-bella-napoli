@@ -1,7 +1,5 @@
 import { IBookingAdmin } from "../models/IBookingAdmin";
 import axios from "axios";
-import { useState, useEffect } from "react";
-import { getBookings } from "../services/getBooking";
 import { Dispatch, SetStateAction } from "react";
 
 interface IBookingPresentationProps {

@@ -1,6 +1,5 @@
 import axios from "../../node_modules/axios/index";
 const restId = import.meta.env.VITE_REST_ID;
-const bookingId = "";
 
 export const updateBooking = async () => {
   const response = await axios.put(
