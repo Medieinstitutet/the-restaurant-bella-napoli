@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
         element: <Checkoutpage />,
       },
       {
-        path: "admin",
+        path: "/admin",
         element: <Admin />,
       },
     ],
