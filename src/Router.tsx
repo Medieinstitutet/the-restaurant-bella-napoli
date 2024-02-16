@@ -3,10 +3,11 @@ import { Layout } from "../src/components/Layout";
 import { Landingpage } from "./pages/Landingpage";
 import { Bookingpage } from "./pages/Bookingpage";
 import { Checkoutpage } from "./pages/Checkoutpage";
-import { ChoseNumberOfPersons } from "../src/components/ChoseNumberOfPersons";
+import { ChoseNumberOfPersons} from "../src/components/ChoseNumberOfPersons";
 import { ChoseDate } from "../src/components/ChoseDate";
 import { ChoseTime } from "../src/components/ChoseTime";
 import { Admin } from "./pages/Admin";
+import BookingForm from "./components/BookingCreate";
 
 export const router = createBrowserRouter([
   {
@@ -16,7 +17,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Landingpage />,
-      },
+      }, {
+            path: "bookingForm",
+            element: <BookingForm />,
+          },
       {
         path: "booking",
         element: <Bookingpage />,
@@ -34,6 +38,8 @@ export const router = createBrowserRouter([
             path: "book-on-time",
             element: <ChoseTime />,
           },
+
+         
         ],
       },
       {

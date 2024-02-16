@@ -1,11 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../styles/_Landingpage.scss";
 
 export const Landingpage = () => {
   return (
     <div className="landingpage-background">
       <header>
+      
         <ul>
+        <li>
+            <Link to={"/bookingForm"}>Boka bord Test</Link>
+          </li>
           <li>
             <NavLink to={"booking/book-number-of-guests"}>Boka bord</NavLink>
           </li>
