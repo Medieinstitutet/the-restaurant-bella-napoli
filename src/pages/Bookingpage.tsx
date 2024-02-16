@@ -13,7 +13,8 @@ export const Bookingpage = () => {
           <NavLink to={"book-on-date"}>Datum</NavLink>
           <NavLink to={"book-on-time"}>Tid</NavLink>
         </nav>
-        <div className="form-container">
+        
+        <div className="form-container"> 
           <Outlet></Outlet>
         </div>
       </div>
