@@ -20,9 +20,11 @@ export const BookingPresentation = ({
   };
   return (
     <div key={booking._id} className="booking-card">
-      <h3>{booking.time}</h3>
+      <h3>{booking._id}</h3>
       <span>CustomerID: {booking.customerId}</span>
-      <span>BookingID: {booking._id}</span>
+      <span>
+        Date: {booking.date}, {booking.time}
+      </span>
       <button className="details-button">Customer Details</button>
       <button className="update-button">Update</button>
       <button className="delete-button" onClick={deleteBooking}>

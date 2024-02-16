@@ -1,10 +1,10 @@
 import axios from "axios";
-import { Booking } from "../models/Booking";
+import { IBooking } from "../models/IBooking";
 
-export const postBooking = async (updatedBooking: Booking) => {
+export const postBooking = async (newBooking: IBooking) => {
   const response = await axios.post(
     "https://school-restaurant-api.azurewebsites.net/booking/create",
-    updatedBooking
+    newBooking
   );
   console.log(response);
 

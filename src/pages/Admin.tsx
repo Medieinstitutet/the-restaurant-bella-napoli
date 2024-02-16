@@ -3,33 +3,32 @@ import { BookingPresentation } from "../components/BookingPresentation";
 import { IBookingAdmin } from "../models/IBookingAdmin";
 import "../styles/Admin/Admin.scss";
 import { getBookings } from "../services/getBooking";
-import { Booking } from "../models/Booking";
+import { IBooking } from "../models/IBooking";
 import { postBooking } from "../services/postBooking";
-import { useEffect } from "react";
 
 const restId: string = import.meta.env.VITE_REST_ID;
 
 export const Admin = () => {
   const [bookings, setBookings] = useState<IBookingAdmin[]>();
-  const [createBooking, setCreateBooking] = useState<Booking>({
+  const [newBooking, setNewBooking] = useState<IBooking>({
     restaurantId: restId,
     date: "",
-    time: "",
-    numberOfGuests: 0,
+    time: "18:00",
+    numberOfGuests: 1,
     customer: { name: "", lastname: "", email: "", phone: "" },
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    postBooking(createBooking);
-    await getData();
-    setCreateBooking({
+    await postBooking(newBooking);
+    setNewBooking({
       restaurantId: restId,
       date: "",
       time: "",
-      numberOfGuests: 0,
+      numberOfGuests: 1,
       customer: { name: "", lastname: "", email: "", phone: "" },
     });
+    await getData();
   };
 
   const handleChange = (
@@ -37,7 +36,7 @@ export const Admin = () => {
   ) => {
     const { name, value } = e.target;
 
-    setCreateBooking((prevBooking) => ({
+    setNewBooking((prevBooking) => ({
       ...prevBooking,
       [name]: value,
       customer: {
@@ -51,7 +50,6 @@ export const Admin = () => {
     const response = await getBookings();
     setBookings(response.data);
   };
-
   if (!bookings) {
     getData();
   }
@@ -61,22 +59,30 @@ export const Admin = () => {
       <section className="admin-section">
         <h2>Admin panel</h2>
         <form onSubmit={handleSubmit}>
+          <h3>Add new booking</h3>
           <label>
             Date:
             <input
               type="date"
-              value={createBooking.date}
+              value={newBooking.date}
               onChange={handleChange}
               name="date"
             />
           </label>
           <label>
-            Time:
-            <select
-              value={createBooking.time}
+            Number of guests
+            <input
+              type="number"
+              name="numberOfGuests"
               onChange={handleChange}
-              name="time"
-            >
+              value={newBooking.numberOfGuests}
+              min={0}
+              max={90}
+            />
+          </label>
+          <label>
+            Time:
+            <select value={newBooking.time} onChange={handleChange} name="time">
               <option>18:00</option>
               <option>21:00</option>
             </select>
@@ -85,7 +91,7 @@ export const Admin = () => {
             Name:
             <input
               type="text"
-              value={createBooking.customer.name}
+              value={newBooking.customer.name}
               onChange={handleChange}
               name="name"
             />
@@ -94,7 +100,7 @@ export const Admin = () => {
             Lastname:
             <input
               type="text"
-              value={createBooking.customer.lastname}
+              value={newBooking.customer.lastname}
               onChange={handleChange}
               name="lastname"
             />
@@ -103,7 +109,7 @@ export const Admin = () => {
             Email:
             <input
               type="text"
-              value={createBooking.customer.email}
+              value={newBooking.customer.email}
               onChange={handleChange}
               name="email"
             />
@@ -112,22 +118,24 @@ export const Admin = () => {
             Phone:
             <input
               type="text"
-              value={createBooking.customer.phone}
+              value={newBooking.customer.phone}
               onChange={handleChange}
               name="phone"
             />
           </label>
           <button>Add booking</button>
         </form>
-        {bookings?.map((booking) => {
-          return (
-            <BookingPresentation
-              key={booking._id}
-              booking={booking}
-              setBookings={setBookings}
-            />
-          );
-        })}
+        <section className="booking-container">
+          {bookings?.map((booking) => {
+            return (
+              <BookingPresentation
+                key={booking._id}
+                booking={booking}
+                setBookings={setBookings}
+              />
+            );
+          })}
+        </section>
       </section>
     </section>
   );
