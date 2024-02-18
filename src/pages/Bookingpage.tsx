@@ -4,7 +4,7 @@ import { ChoseNumberOfPersons } from "../components/ChoseNumberOfPersons";
 import { ChoseDate } from "../components/ChoseDate";
 import { ChoseTime } from "../components/ChoseTime";
 
-export const Bookingpage = () => {
+export const Bookingpage: React.FC = () => {
   return (
     <>
       <div className="bookingpage-container">
@@ -12,9 +12,9 @@ export const Bookingpage = () => {
           Tillbaka till huvudsidan
         </NavLink>
         <div className="table-booking-form">
-          <ChoseNumberOfPersons></ChoseNumberOfPersons>
-          <ChoseDate></ChoseDate>
-          <ChoseTime></ChoseTime>
+          <ChoseNumberOfPersons />
+          <ChoseDate />
+          <ChoseTime />
         </div>
         <button className="booktable-button">Boka bord</button>
       </div>
