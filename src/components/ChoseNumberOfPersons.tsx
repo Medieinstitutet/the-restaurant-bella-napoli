@@ -1,5 +1,3 @@
-import "../styles/_ChoseNumberOfPersons.scss";
-
 export const ChoseNumberOfPersons = () => {
   const buttons = [];
   for (let i = 1; i <= 90; i++) {

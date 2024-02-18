@@ -1,5 +1,3 @@
-import "../styles/_ChoseTime.scss";
-
 export const ChoseTime = () => {
   return (
     <div className="chosetime-container">

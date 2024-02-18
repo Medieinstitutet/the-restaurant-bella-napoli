@@ -7,7 +7,7 @@ export const Landingpage = () => {
       <header>
         <ul>
           <li>
-            <NavLink to={"booking/book-number-of-guests"}>Boka bord</NavLink>
+            <NavLink to={"booking"}>Boka bord</NavLink>
           </li>
           <li>
             <a href="#menu-container">Meny</a>
