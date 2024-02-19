@@ -10,9 +10,9 @@ export const ChoseTime = () => {
   return (
     <div className="chosetime-container">
       <h2>Välj tid</h2>
+      <p>Vald tid: {selectedTime ? selectedTime : "Ingen tid vald"}</p>
       <button onClick={() => handleTimeChange("18.00")}>18.00</button>
       <button onClick={() => handleTimeChange("21.00")}>21.00</button>
-      {selectedTime && <p>Vald tid: {selectedTime}</p>}
     </div>
   );
 };
