@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { LocalizationProvider, MobileDatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
@@ -10,13 +10,15 @@ export const ChoseDate = () => {
   const handleDateChange = (newValue: Dayjs | null) => {
     setSelectedDate(newValue);
   };
-  const formattedDate = selectedDate
+
+  const displayDate = selectedDate
     ? selectedDate.format("YYYY-MM-DD")
-    : "Ingen datum vald";
+    : "Inget datum valt";
 
   return (
     <div className="date-container">
       <h2>Välj datum</h2>
+      <p>Valt datum: {displayDate}</p>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <MobileDatePicker
           label="Datum"
@@ -24,7 +26,6 @@ export const ChoseDate = () => {
           onChange={handleDateChange}
         />
       </LocalizationProvider>
-      <p>Valt datum: {formattedDate}</p>
     </div>
   );
 };

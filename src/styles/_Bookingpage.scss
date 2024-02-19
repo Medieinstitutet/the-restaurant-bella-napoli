@@ -2,14 +2,21 @@
 @use "mixins";
 
 .bookingpage-container {
-    width: 90%;
+    width: 70%;
     height: auto;
     display: flex;
     flex-direction: column;
+    position: relative;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    background-color: rgba($color: #ffff, $alpha: 0.9);
+    @include mixins.desktop {
+        width: 35%;
+    }
 }
 
 .backtohomepage-link {
@@ -28,7 +35,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 10px;
 }
 
 .chosenumberofpersons-container {
@@ -43,6 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .chosetime-container {
@@ -58,11 +66,8 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-
+    width: 90%;
     gap: 20px;
-    @include mixins.desktop {
-        width: 50%;
-    }
 }
 
 button {
@@ -79,12 +84,28 @@ button {
 .booktable-button {
     width: 100px;
     padding: 15px;
-    margin-top: 100px;
+    margin-top: 80px;
+
     &:hover {
         filter: brightness(0.8);
+    }
+    &:focus {
+        filter: none;
     }
 }
 
 p {
     font-size: 24px;
+    margin: 10px;
+}
+
+.showmore-button {
+    margin-top: 20px;
+    &:focus {
+        filter: none;
+    }
+}
+
+h2 {
+    margin: 10px;
 }

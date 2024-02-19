@@ -8,10 +8,10 @@ export const Bookingpage: React.FC = () => {
   return (
     <>
       <div className="bookingpage-container">
-        <NavLink to={"/"} className="backtohomepage-link">
-          Tillbaka till huvudsidan
-        </NavLink>
         <div className="table-booking-form">
+          <NavLink to={"/"} className="backtohomepage-link">
+            Tillbaka till huvudsidan
+          </NavLink>
           <ChoseNumberOfPersons />
           <ChoseDate />
           <ChoseTime />

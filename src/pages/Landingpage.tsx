@@ -36,6 +36,9 @@ export const Landingpage = () => {
           <p>Adress: Drottinggatan 50</p>
           <p>Telefon: +4637057042</p>
           <p>Email: BellaBella@mail.com</p>
+          <NavLink className="menubook-link" to={"booking"}>
+            Boka bord
+          </NavLink>
         </div>
       </div>
     </div>

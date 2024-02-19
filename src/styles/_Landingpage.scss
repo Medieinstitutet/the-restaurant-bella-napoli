@@ -4,10 +4,7 @@
 .landingpage-background {
     width: 100%;
     height: 300vh;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.5)),
-        url("../assets/landingpagebackground4.jpg");
-    object-fit: contain;
-    background-position: center;
+
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -101,6 +98,7 @@ header {
     align-items: center;
     color: v.$primarytextcolor;
     flex-direction: column;
+    position: relative;
 }
 
 .contacttext-container {
