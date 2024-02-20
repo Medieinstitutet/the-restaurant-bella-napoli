@@ -53,6 +53,7 @@ export const Admin = () => {
   if (!bookings) {
     getData();
   }
+  
 
   return (
     <section className="admin-page">

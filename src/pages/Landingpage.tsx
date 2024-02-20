@@ -16,7 +16,7 @@ export const Landingpage = () => {
         <div className="line"></div>
         <div className="line"></div>
       </div>
-          <header>
+        <header>
                 <ul className={`menu ${menuOpen ? "open" : ""}`}>
           <li>
             <Link to={"/bookingForm"} onClick={toggleMenu}>Boka bord Test</Link>
