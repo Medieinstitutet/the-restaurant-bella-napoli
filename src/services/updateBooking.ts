@@ -3,7 +3,8 @@ import { IUpdateBooking } from "../models/IUpdateBooking";
 
 export const updateBooking = async (updatedBooking: IUpdateBooking) => {
   const response = await axios.put(
-    "https://school-restaurant-api.azurewebsites.net/booking/update/65c8d957cbb6491fd64e9a94",
+    "https://school-restaurant-api.azurewebsites.net/booking/update/" +
+      updatedBooking.id,
     updatedBooking
   );
   console.log(response.data);
