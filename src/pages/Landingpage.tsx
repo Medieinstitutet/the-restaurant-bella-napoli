@@ -22,7 +22,7 @@ export const Landingpage = () => {
       <header>
         <ul className={`menu ${menuOpen ? "open" : ""}`}>
           <li>
-            {/* <NavLink to={"booking"}>Boka bord</NavLink> */}
+            {}
             <Link to={"/bookingForm"} onClick={toggleMenu}>
               Boka bord Test
             </Link>
@@ -48,15 +48,7 @@ export const Landingpage = () => {
         </div>
       </div>
       <div id="contact-container">
-        <div className="contacttext-container">
-          <p>Öppettider: Måndag-Söndag 18-24</p>
-          <p>Adress: Drottinggatan 50</p>
-          <p>Telefon: +4637057042</p>
-          <p>Email: BellaBella@mail.com</p>
-          {/* <NavLink className="menubook-link" to={"booking"}>
-            Boka bord
-          </NavLink> */}
-        </div>
+      
         <Footer /> {}
       </div>
       <div id="kontakt"></div>
