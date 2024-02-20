@@ -1,41 +1,21 @@
-import { Link } from "react-router-dom";
-import FoodMenu from "../components/foodmenu";
+import { NavLink } from "react-router-dom";
+import { FoodMenu } from "../components/FoodMenu";
 import "../styles/_Landingpage.scss";
 import Footer from "../components/footer";
-import { useState } from "react";
 
 export const Landingpage = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
   return (
     <div className="landingpage-background">
-      <div
-        className={`hamburger-menu ${menuOpen ? "active" : ""}`}
-        onClick={toggleMenu}
-      >
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-      </div>
       <header>
-        <ul className={`menu ${menuOpen ? "open" : ""}`}>
+        <ul>
           <li>
-            {}
-            <Link to={"/bookingForm"} onClick={toggleMenu}>
-              Boka bord Test
-            </Link>
+            <NavLink to={"/bookingForm"}>Boka bord Test</NavLink>
           </li>
           <li>
-            <a href="#menu-container" onClick={toggleMenu}>
-              Meny
-            </a>
+            <a href="#menu-container">Meny</a>
           </li>
           <li>
-            <a href="#kontakt" onClick={toggleMenu}>
-              Kontakt
-            </a>
+            <a href="#kontakt">Kontakt</a>
           </li>
         </ul>
       </header>
@@ -44,12 +24,18 @@ export const Landingpage = () => {
       </div>
       <div id="menu-container">
         <div className="menutext-container">
-          <FoodMenu /> {}
+          <h2>Meny</h2>
+          <p>Risotto</p>
+          <p>Carbonarara</p>
+          <p>Sallad</p>
+          <p>Bolognese</p>
+          <p>Margherita</p>
+          <p>Pesto alla Genovese</p>
         </div>
+        {/* <FoodMenu /> */}
       </div>
       <div id="contact-container">
-      
-        <Footer /> {}
+        <Footer />
       </div>
       <div id="kontakt"></div>
     </div>
