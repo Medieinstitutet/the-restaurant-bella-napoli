@@ -23,8 +23,8 @@ export const BookingPresentation = ({
   const [updatedBooking, setUpdatedBooking] = useState<IUpdateBooking>({
     id: booking._id,
     restaurantId: restId,
-    date: "",
-    time: "",
+    date: "2020-02-02",
+    time: "18:00",
     numberOfGuests: 0,
     customerId: booking.customerId,
   });
@@ -47,8 +47,8 @@ export const BookingPresentation = ({
     setUpdatedBooking({
       id: booking._id,
       restaurantId: restId,
-      date: "",
-      time: "",
+      date: "2020-02-02",
+      time: "18:00",
       numberOfGuests: 0,
       customerId: booking.customerId,
     });
@@ -79,6 +79,7 @@ export const BookingPresentation = ({
       <span>
         Date: {booking.date}, {booking.time}
       </span>
+      <span>Guests: {booking.numberOfGuests}</span>
       <button className="details-button">Customer Details</button>
       <button className="update-button" onClick={toggleForm}>
         Edit
