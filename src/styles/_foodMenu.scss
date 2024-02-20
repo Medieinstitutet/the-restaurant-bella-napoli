@@ -16,7 +16,7 @@
 
 .food-menu-item {
     width: 24%;
-    height: 250px;
+    height: auto;
     margin: 30px;
     padding: 10px;
     background-color: #f9f9f9;
@@ -29,7 +29,6 @@
 
     @media (max-width: 768px) {
         width: calc(50% - 20px);
-        height: 150px;
     }
 
     @media (max-width: 480px) {
@@ -76,4 +75,8 @@
 .food-menu-item-price {
     font-size: 20px;
     color: #df0202;
+}
+
+h2 {
+    text-align: center;
 }

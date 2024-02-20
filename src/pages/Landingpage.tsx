@@ -43,9 +43,9 @@ export const Landingpage = () => {
         <h1>Välkommen till Bella Napoli!</h1>
       </div>
       <div id="menu-container">
-        <div className="menutext-container">
+       
           <FoodMenu /> {}
-        </div>
+        
       </div>
       <div id="contact-container">
       
