@@ -11,6 +11,31 @@
     display: flex;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes Visable {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#menu-container.animation-active {
+    animation: Visable 1.5s forwards;
+}
+
+#contact-container.animation-active {
+    animation: Visable 1.5s forwards;
+}
 .welcome-container {
     width: 100%;
     height: 100vh;
@@ -19,6 +44,7 @@
     justify-content: center;
     color: v.$primarytextcolor;
     text-align: center;
+    animation: fadeIn 2s ease-out;
 
     h1 {
         font-size: 3em;
