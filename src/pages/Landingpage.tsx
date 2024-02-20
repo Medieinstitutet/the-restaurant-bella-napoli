@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { FoodMenu } from "../components/FoodMenu";
+//import { FoodMenu } from "../components/FoodMenu";
 import "../styles/_Landingpage.scss";
 import Footer from "../components/footer";
 
@@ -9,7 +9,7 @@ export const Landingpage = () => {
       <header>
         <ul>
           <li>
-            <NavLink to={"/bookingForm"}>Boka bord Test</NavLink>
+            <NavLink to={"/bookingForm"}>Boka bord</NavLink>
           </li>
           <li>
             <a href="#menu-container">Meny</a>
