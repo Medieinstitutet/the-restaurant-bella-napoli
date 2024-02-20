@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import FoodMenu from "../components/foodmenu"; 
+import FoodMenu from "../components/foodmenu";
 import "../styles/_Landingpage.scss";
 import Footer from "../components/footer";
 import { useState } from "react";
@@ -9,28 +9,35 @@ export const Landingpage = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  return ( 
+  return (
     <div className="landingpage-background">
-      <div className={`hamburger-menu ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
+      <div
+        className={`hamburger-menu ${menuOpen ? "active" : ""}`}
+        onClick={toggleMenu}
+      >
         <div className="line"></div>
         <div className="line"></div>
         <div className="line"></div>
       </div>
-        <header>
-                <ul className={`menu ${menuOpen ? "open" : ""}`}>
+      <header>
+        <ul className={`menu ${menuOpen ? "open" : ""}`}>
           <li>
-
             {/* <NavLink to={"booking"}>Boka bord</NavLink> */}
-            <Link to={"/bookingForm"} onClick={toggleMenu}>Boka bord Test</Link>
+            <Link to={"/bookingForm"} onClick={toggleMenu}>
+              Boka bord Test
+            </Link>
           </li>
           <li>
-            <a href="#menu-container" onClick={toggleMenu}>Meny</a>
+            <a href="#menu-container" onClick={toggleMenu}>
+              Meny
+            </a>
           </li>
           <li>
-            <a href="#kontakt" onClick={toggleMenu}>Kontakt</a>
+            <a href="#kontakt" onClick={toggleMenu}>
+              Kontakt
+            </a>
           </li>
         </ul>
-
       </header>
       <div className="welcome-container">
         <h1>Välkommen till Bella Napoli!</h1>
