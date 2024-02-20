@@ -14,6 +14,7 @@ export const BookingForm = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [showBookingForm, setShowBookingForm] = useState(false);
+  const [gdprConsent, setGdprConsent] = useState(false);
 
   const TotalTables = 15;
   const restaurantId = import.meta.env.VITE_REST_ID;
@@ -34,6 +35,11 @@ export const BookingForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!gdprConsent) {
+      alert("Vänligen godkänn GDPR för att boka.");
+      return;
+    }
 
     const matchingBookings = bookings.filter(
       (booking: IBooking) => booking.date === date && booking.time === time
@@ -200,6 +206,16 @@ export const BookingForm = () => {
             pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
             placeholder="XXXXXXXXXX"
           />
+
+          <div className="booking-form__checkbox">
+            <input
+              type="checkbox"
+              id="gdprConsent"
+              checked={gdprConsent}
+              onChange={(e) => setGdprConsent(e.target.checked)}
+            />
+            <label htmlFor="gdprConsent">Jag godkänner GDPR</label>
+          </div>
 
           <button type="submit" className="booking-form__btn">
             Skapa bokning
