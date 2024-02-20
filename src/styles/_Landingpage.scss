@@ -5,13 +5,18 @@
     width: 100%;
     height: 300vh;
     background: linear-gradient(to top, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.5)),
-        url("../assets/landingpagebackground4.jpg");
+        url("../assets/landingpagebackground3.jpg");
     object-fit: contain;
     background-position: center;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    background-repeat: repeat;
+
+    @media only screen and (max-width: 600px) {
+        height: 500vh;
+    }
 }
 
 .welcome-container {
@@ -22,10 +27,15 @@
     justify-content: center;
     color: v.$primarytextcolor;
     text-align: center;
+
     h1 {
         font-size: 3em;
         background-color: rgb(0, 0, 0, 0.5);
         padding: 10px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        pa-bottom: 100px;
     }
 }
 
@@ -45,6 +55,7 @@ header {
 
         li {
             gap: 50px;
+
             a {
                 color: v.$primarytextcolor;
                 text-decoration: none;
@@ -52,25 +63,110 @@ header {
                 background-color: rgb(0, 0, 0, 0.2);
                 border: solid v.$primarytextcolor 2px;
                 padding: 10px;
+
                 &:hover {
                     filter: brightness(0.8);
                 }
             }
         }
     }
+
     @include mixins.desktop {
         justify-content: flex-end;
         padding-right: 50px;
     }
 }
 
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.line.active:nth-child(2) {
+    transform: scaleX(0);
+}
+
+.line.active:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.line.active:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 43vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu.open {
+    transform: translateX(0);
+}
+
+.menu li {
+    margin-bottom: 20px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+@media only screen and (max-width: 600px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .menu {
+        gap: 10px;
+        padding: 50px 20px;
+    }
+}
+
+
+
 #menu-container {
+    padding-top: 40vh;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: v.$primarytextcolor;
+    color: rgb(0, 0, 0, 0.5);
+
+    @media only screen and (max-width: 600px) {
+        padding-top: 150vh;
+    }
 }
 
 .menutext-container {
@@ -78,46 +174,22 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: min-content;
+    width: 90%;
     height: min-content;
-    padding: 100px;
-    padding-top: 25px;
     padding-bottom: 25px;
-    background-color: rgb(0, 0, 0, 0.7);
+    background-color: rgb(0, 0, 0, 0.5);
     text-align: center;
     font-size: 1.5em;
-    @include mixins.desktop {
-        width: 50%;
-        height: 80%;
-        font-size: 2em;
-    }
 }
 
 #contact-container {
-    width: 100%;
+    padding-top: 450px;
+    width: 90%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: v.$primarytextcolor;
     flex-direction: column;
-}
 
-.contacttext-container {
-    text-align: center;
-    width: min-content;
-    height: min-content;
-    background-color: rgb(0, 0, 0, 0.7);
-    padding: 50px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 1.5em;
-    @include mixins.desktop {
-        width: 50%;
-        height: 80%;
+    @media only screen and (max-width: 600px) {
+        margin-top: 90vh;
+        height: 150vh;
     }
 }

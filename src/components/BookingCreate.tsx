@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/_bookingCreate.scss";
 import { IBooking } from "../models/IBooking";
 
+
 export const BookingForm = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("18:00");
@@ -15,7 +16,6 @@ export const BookingForm = () => {
   const [showBookingForm, setShowBookingForm] = useState(false);
 
   const TotalTables = 15;
-
   const restaurantId = import.meta.env.VITE_REST_ID;
 
   useEffect(() => {
@@ -35,13 +35,14 @@ export const BookingForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    
     const matchingBookings = bookings.filter(
       (booking: IBooking) => booking.date === date && booking.time === time
     );
 
     const totalBookings = matchingBookings.length;
 
-    if (totalBookings < TotalTables) {
+    if (totalBookings <= TotalTables) {
       try {
         const response = await axios.post(
           "https://school-restaurant-api.azurewebsites.net/booking/create", 
@@ -60,22 +61,40 @@ export const BookingForm = () => {
         );
         console.log(response.data);
         alert("Bokning skapad för " + date + " " + time);
+        window.location.href = "/"; 
       } catch (error) {
         console.error("Error creating booking:", error);
         alert("Något gick fel, dubbelkolla uppgifterna ");
       }
-    } else {
+    } else  {
       alert("Det finns tyvärr inga lediga bord på denna tidpunkt.");
     }
-  };
-
+  }; 
   const handleSearch = () => {
     const matchingBookings = bookings.filter(
       (booking: IBooking) => booking.date === date && booking.time === time
     );
+    
     const totalBookings = matchingBookings.length;
 
-    if (totalBookings < TotalTables) {
+    if (numberOfGuests < 1  ) {
+      alert("Ange antal gäster");
+       return
+      
+    }
+
+    const selectedDateTime = new Date(`${date}T${time}`);
+    const currentDateTime = new Date();
+    
+    if (!date || !time) {
+      alert("Vänligen välj både datum och tid.");
+      return;
+    } else if (selectedDateTime < currentDateTime) {
+      alert("Vänligen välj ett datum och tid som är framåt i tiden.");
+      return;
+    }
+
+    if (totalBookings <= TotalTables) {
       setShowBookingForm(true);
     } else {
       alert("Det finns tyvärr inga lediga bord på denna tidpunkt.");
