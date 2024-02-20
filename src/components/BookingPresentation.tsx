@@ -23,9 +23,9 @@ export const BookingPresentation = ({
   const [updatedBooking, setUpdatedBooking] = useState<IUpdateBooking>({
     id: booking._id,
     restaurantId: restId,
-    date: "2024-02-02",
-    time: "21:00",
-    numberOfGuests: 2,
+    date: "",
+    time: "",
+    numberOfGuests: 0,
     customerId: booking.customerId,
   });
 
@@ -47,9 +47,9 @@ export const BookingPresentation = ({
     setUpdatedBooking({
       id: booking._id,
       restaurantId: restId,
-      date: "2024-02-02",
-      time: "21:00",
-      numberOfGuests: 2,
+      date: "",
+      time: "",
+      numberOfGuests: 0,
       customerId: booking.customerId,
     });
     await getData();
