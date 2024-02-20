@@ -15,7 +15,7 @@ export const BookingForm = () => {
   const [phone, setPhone] = useState("");
   const [showBookingForm, setShowBookingForm] = useState(false);
 
-  const TotalTables = 15; aas
+  const TotalTables = 15; 
   const restaurantId = import.meta.env.VITE_REST_ID;
 
   useEffect(() => {
