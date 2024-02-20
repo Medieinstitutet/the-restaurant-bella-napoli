@@ -1,82 +1,54 @@
 .food-menu-container {
-    margin-top: 50px;
-    width: auto;
-    color: #f9f9f9;
-    overflow-x: auto;
-}
-
-.food-menu-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    width: 80%;
+    max-height: 100vh;
+    background-color: rgb(0, 0, 0, 0.5);
+    text-align: center;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    padding: 50px;
 }
 
 .food-menu-item {
-    width: 24%;
-    height: auto;
-    margin: 30px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-
-    @media (max-width: 1200px) {
-        width: calc(33% - 20px);
-    }
-
-    @media (max-width: 768px) {
-        width: calc(50% - 20px);
-    }
-
-    @media (max-width: 480px) {
-        width: calc(100% - 20px);
-    }
+    background-color: white;
+    height: 250px;
+    width: 200px;
 }
 
-
+.food-menu-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-height: 100vh;
+    flex-wrap: wrap;
+    gap: 50px;
+    list-style: none;
+    padding: 0;
+}
 
 .food-menu-item img {
     width: 100%;
-    height: 80%;
-    border-radius: 8px;
-    float: left;
-
-    @media only screen and (max-width: 600px) {
-        width: 50%;
-        height: 90%;
-
-    }
+    height: 75%;
+    object-fit: cover;
 }
 
-
 .food-menu-item-details {
-    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
     text-align: center;
-
-    @media only screen and (max-width: 600px) {
-        display: flex;
-        flex-direction: column;
-        margin-top: 0;
-
-    }
-
 }
 
 .food-menu-item-name {
     color: #010101;
     font-size: 18px;
     font-weight: bold;
-    margin: 20px;
 }
 
 .food-menu-item-price {
     font-size: 20px;
-    color: #df0202;
-}
-
-h2 {
-    text-align: center;
+    color: black;
 }
