@@ -12,9 +12,9 @@ export const Admin = () => {
   const [bookings, setBookings] = useState<IBookingAdmin[]>();
   const [newBooking, setNewBooking] = useState<IBooking>({
     restaurantId: restId,
-    date: "",
+    date: "2020-02-0",
     time: "18:00",
-    numberOfGuests: 1,
+    numberOfGuests: 0,
     customer: { name: "", lastname: "", email: "", phone: "" },
   });
 
@@ -23,9 +23,9 @@ export const Admin = () => {
     await postBooking(newBooking);
     setNewBooking({
       restaurantId: restId,
-      date: "",
-      time: "",
-      numberOfGuests: 1,
+      date: "2020-02-02",
+      time: "18:00",
+      numberOfGuests: 0,
       customer: { name: "", lastname: "", email: "", phone: "" },
     });
     await getData();
@@ -78,7 +78,7 @@ export const Admin = () => {
               onChange={handleChange}
               value={newBooking.numberOfGuests}
               min={0}
-              max={90}
+              max={6}
             />
           </label>
           <label>
@@ -133,6 +133,8 @@ export const Admin = () => {
                 key={booking._id}
                 booking={booking}
                 setBookings={setBookings}
+                setNewBooking={setNewBooking}
+                newBooking={newBooking}
               />
             );
           })}

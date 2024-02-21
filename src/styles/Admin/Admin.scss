@@ -27,7 +27,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
+      flex-direction: column;
       background-color: white;
       border-radius: 5px;
       width: 100%;
@@ -41,6 +41,19 @@
 
       button {
         width: 70%;
+      }
+
+      form {
+        width: 100%;
+        display: none;
+      }
+
+      .edit-form {
+        display: none;
+      }
+
+      .edit-form-show {
+        display: flex;
       }
     }
 
