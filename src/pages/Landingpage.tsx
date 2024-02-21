@@ -27,7 +27,7 @@ export const Landingpage = () => {
             </a>
           </li>
           <li>
-            <a href="#kontakt" onClick={() => toggleAnimation("footer")}>
+            <a href="#contact-container" onClick={() => toggleAnimation("footer")}>
               Kontakt
             </a>
           </li>

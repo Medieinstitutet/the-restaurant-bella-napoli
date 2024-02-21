@@ -26,6 +26,10 @@ export const BookingForm = () => {
           `https://school-restaurant-api.azurewebsites.net/booking/restaurant/${restaurantId}`
         );
         setBookings(response.data);
+
+        response.data.forEach((booking) => {
+          console.log(`Customer name: ${booking.customer.name} ${booking.customer.lastname}`);
+        });
       } catch (error) {
         console.error("Error fetching bookings:", error);
       }
@@ -75,6 +79,7 @@ export const BookingForm = () => {
       alert("Det finns tyvärr inga lediga bord på denna tidpunkt.");
     }
   };
+
   const handleSearch = () => {
     const matchingBookings = bookings.filter(
       (booking: IBooking) => booking.date === date && booking.time === time
