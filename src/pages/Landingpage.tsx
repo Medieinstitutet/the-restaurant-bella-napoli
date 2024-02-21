@@ -57,7 +57,7 @@ export const Landingpage = () => {
       >
         <Footer />
       </div>
-      {/* <div id="kontakt"></div> */}
+      <div id="kontakt"></div>
     </div>
   );
 };
