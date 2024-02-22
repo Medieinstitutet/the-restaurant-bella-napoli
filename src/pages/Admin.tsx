@@ -20,6 +20,23 @@ export const Admin = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (newBooking.numberOfGuests < 1) {
+      alert("Vänligen välj antal gäster");
+      return;
+    }
+  
+    const selectedDateTime = new Date(`${newBooking.date}T${newBooking.time}`);
+  const currentDateTime = new Date();
+
+  if (!newBooking.date || !newBooking.time) {
+    alert("Vänligen välj både datum och tid.");
+    return;
+  } else if (selectedDateTime < currentDateTime) {
+    alert("Vänligen välj ett datum och tid som är framåt i tiden.");
+    return;
+  }
+  
     await postBooking(newBooking);
     setNewBooking({
       restaurantId: restId,
@@ -30,6 +47,7 @@ export const Admin = () => {
     });
     await getData();
   };
+  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>

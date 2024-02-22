@@ -1,8 +1,11 @@
+// styles.scss
+
 @use "../mixins";
 
 .admin-page {
   width: 100%;
-  background-color: rgb(243, 243, 243);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.5)),
+    url("../assets/landingpagebackground4.jpg");
   display: flex;
   justify-content: center;
 
@@ -23,17 +26,19 @@
       gap: 20px;
     }
 
+
     .booking-card {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.2);
       border-radius: 5px;
       width: 100%;
-      padding: 10px;
-      box-shadow: 0px 10px 10px rgba($color: #000000, $alpha: 0.2);
-      gap: 10px;
+      padding: 20px;
+      box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.1);
+      gap: 20px;
+      color: #ccc;
 
       @include mixins.desktop {
         width: 30%;
@@ -41,19 +46,26 @@
 
       button {
         width: 70%;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #45a049;
+        }
       }
 
       form {
         width: 100%;
         display: none;
-      }
 
-      .edit-form {
-        display: none;
-      }
-
-      .edit-form-show {
-        display: flex;
+        &.edit-form-show {
+          display: flex;
+        }
       }
     }
 
@@ -61,30 +73,40 @@
       display: flex;
       flex-direction: column;
       background-color: white;
-      gap: 10px;
-      width: 50%;
+      gap: 20px;
+      width: 30%;
       padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0px 10px 10px rgba($color: #000000, $alpha: 0.2);
+      border-radius: 10px;
+      box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.1);
 
       input {
         width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
       }
 
       button {
         width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #45a049;
+        }
       }
     }
 
     h2 {
-      margin: 20px;
+      margin: 20px 0;
       padding: 0;
       width: 100%;
-    }
-
-    button:hover {
-      background-color: rgb(165, 165, 165);
-      transition: 200ms;
+      text-align: center;
     }
   }
 }

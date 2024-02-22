@@ -75,7 +75,7 @@ export const BookingPresentation = ({
   return (
     <div key={booking._id} className="booking-card">
       <h3>{booking._id}</h3>
-      <span>CustomerID: {booking.customerId}</span>
+      <span>CustomerID: {booking.customerId} </span>
       <span>
         Date: {booking.date}, {booking.time}
       </span>
