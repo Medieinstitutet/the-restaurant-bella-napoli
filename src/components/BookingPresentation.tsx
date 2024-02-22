@@ -14,6 +14,8 @@ interface IBookingPresentationProps {
   setNewBooking: any;
   newBooking: any;
 }
+const currentDate = new Date();
+  const formattedCurrentDate = currentDate.toISOString().split("T")[0]; 
 
 export const BookingPresentation = ({
   booking,
@@ -23,7 +25,7 @@ export const BookingPresentation = ({
   const [updatedBooking, setUpdatedBooking] = useState<IUpdateBooking>({
     id: booking._id,
     restaurantId: restId,
-    date: "2020-02-02",
+    date: formattedCurrentDate,
     time: "18:00",
     numberOfGuests: 0,
     customerId: booking.customerId,
@@ -47,12 +49,16 @@ export const BookingPresentation = ({
     setUpdatedBooking({
       id: booking._id,
       restaurantId: restId,
-      date: "2020-02-02",
+      date: formattedCurrentDate,
       time: "18:00",
       numberOfGuests: 0,
       customerId: booking.customerId,
     });
     await getData();
+    if (updatedBooking.numberOfGuests <= 0) {
+      alert("Vänligen välj antal gäster");
+      return;
+    }
   };
 
   const handleChange = (
