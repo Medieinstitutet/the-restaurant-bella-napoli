@@ -15,6 +15,7 @@ export const BookingForm = () => {
   const [phone, setPhone] = useState("");
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const TotalTables = 15;
   const restaurantId = import.meta.env.VITE_REST_ID;
@@ -45,6 +46,8 @@ export const BookingForm = () => {
       return;
     }
 
+    setIsLoading(true);
+
     const matchingBookings = bookings.filter(
       (booking: IBooking) => booking.date === date && booking.time === time
     );
@@ -74,9 +77,12 @@ export const BookingForm = () => {
       } catch (error) {
         console.error("Error creating booking:", error);
         alert("Något gick fel, dubbelkolla uppgifterna ");
+      } finally {
+        setIsLoading(false);
       }
     } else {
       alert("Det finns tyvärr inga lediga bord på denna tidpunkt.");
+      setIsLoading(false);
     }
   };
 
@@ -227,6 +233,9 @@ export const BookingForm = () => {
           </button>
         </form>
       )}
+      <div className="spinner-container">
+        {isLoading && <div className="spinner"></div>}
+      </div>
     </div>
   );
 };
