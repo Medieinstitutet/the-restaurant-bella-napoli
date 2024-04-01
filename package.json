@@ -1,12 +1,14 @@
 {
   "name": "restaurant-template",
-  "private": true,
+  "homepage": "https://Medieinstitutet.github.io/the-restaurant-bella-napoli/",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "vite build",
     "predeploy": "npm run build",
-    "build": "tsc && vite build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -20,7 +22,6 @@
     "axios": "^1.6.7",
     "dayjs": "^1.11.10",
     "dotenv": "^16.4.1",
-    "gh-pages": "^6.1.1",
     "react": "^17.0.0 || ^18.0.0",
     "react-datepicker": "^6.1.0",
     "react-dom": "^18.2.0",
@@ -39,6 +40,7 @@
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "gh-pages": "^6.1.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }
