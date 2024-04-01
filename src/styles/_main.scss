@@ -1,0 +1,11 @@
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.5)),
+        url("../assets/landingpagebackground4.jpg");
+    object-fit: contain;
+    background-position: center;
+}
