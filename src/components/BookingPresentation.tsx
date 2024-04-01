@@ -15,7 +15,7 @@ interface IBookingPresentationProps {
   newBooking: any;
 }
 const currentDate = new Date();
-  const formattedCurrentDate = currentDate.toISOString().split("T")[0]; 
+const formattedCurrentDate = currentDate.toISOString().split("T")[0];
 
 export const BookingPresentation = ({
   booking,
@@ -43,7 +43,7 @@ export const BookingPresentation = ({
     setFormState(!formState);
   };
 
-  const submitEditedBooking = async (e: React.FormEvent) => {
+  const submitEditedBooking = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     await updateBooking(updatedBooking);
     setUpdatedBooking({
